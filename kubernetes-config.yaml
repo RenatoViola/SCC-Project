@@ -75,7 +75,10 @@ spec:
         - name: REDIS_URL
           value: "redis-cache"
         - name: COSMOSDB_KEY
-          value: "BmMTkbVnUReqzKhzQ4vvHKkU8Mhmkr9UDok9dKXkPp7kagmrRfONeZMrpKxOssi6lgT1YaLbyEgDACDbWV6kbQ=="
+          valueFrom:
+            secretKeyRef:
+              name: cosmosdb-secret
+              key: cosmosdb-key
         - name: COSMOSDB_URL
           value: "https://scc2460665.documents.azure.com:443/"
         - name: COSMOSDB_DATABASE
